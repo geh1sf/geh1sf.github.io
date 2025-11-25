@@ -10,8 +10,8 @@
 <!-- GSAP Animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
-</head>
 
+</head>
 <body>
 
 <!-- LANGUAGE SWITCHER -->
@@ -76,23 +76,35 @@
     <div class="schedule-item"><strong>00:00</strong> — <span data-i18n="sched_00">Fireworks</span></div>
 </section>
 
-<!-- RSVP -->
+<!-- RSVP FORM -->
 <section class="section rsvp-section animate-up" id="rsvp">
     <h2 class="section-title" data-i18n="rsvp">RSVP</h2>
 
-    <form id="rsvpForm" method="POST">
+    <form id="rsvpForm" method="POST"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSdP3RCYAEzto8rFYqPGbXhMwYN6QxGh3W0MWRgxF-MLA5P1tA/formResponse"
+          target="hidden_iframe">
 
-        <input type="text" name="entry.45681910" 
-               data-i18n-placeholder="your_name" placeholder="Your Name" required>
+        <!-- Your Name -->
+        <input type="text" name="entry.45681910"
+               placeholder="Your Name"
+               data-i18n-placeholder="your_name"
+               required>
 
-        <!-- Bringing +1 -->
+        <!-- Bringing +1? -->
         <select name="entry.45734887" id="plusOneSelect" required>
             <option value="" data-i18n="bringing_plus1">Bringing +1?</option>
             <option data-i18n="yes">Yes</option>
             <option data-i18n="no">No</option>
         </select>
 
-        <!-- Main Guest Menu (with tooltip) -->
+        <!-- +1 NAME -->
+        <input type="text"
+               id="plusOneName"
+               name="entry.45713329"
+               placeholder="Name of +1"
+               style="display:none;">
+
+        <!-- Main Guest Menu -->
         <div class="menu-wrapper">
             <select name="entry.45734741" id="menuMain" required>
                 <option value="">Select Menu</option>
@@ -108,9 +120,9 @@
             <option>0</option><option>1</option><option>2</option><option>3+</option>
         </select>
 
-        <!-- +1 Menu (with tooltip, hidden initially) -->
-        <div class="menu-wrapper" id="plusOneWrapper" style="display:none;">
-            <select id="plusOneMenu" name="entry.plusOneMenu">
+        <!-- +1 MENU DROPDOWN -->
+        <div class="menu-wrapper" id="plusOneMenuWrapper" style="display:none;">
+            <select id="plusOneMenu" name="entry.45657263">
                 <option value="">Menu for +1</option>
                 <option value="Menu 1" data-tooltip="Seafood main course, fresh salad, dessert, white wine.">Menu 1</option>
                 <option value="Menu 2" data-tooltip="Beef main course, potatoes, dessert, red wine.">Menu 2</option>
@@ -126,6 +138,8 @@
             Thank you! Your RSVP has been submitted.
         </p>
     </form>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
 </section>
 
 <footer>
@@ -133,5 +147,6 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+
 </body>
 </html>
