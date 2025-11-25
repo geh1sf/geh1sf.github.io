@@ -3,97 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Special Day</title>
+<title>Our Beach Wedding</title>
 
 <style>
     body {
         margin: 0;
         font-family: 'Georgia', serif;
-        background: #f7f0e9;
-        color: #4a3c32;
+        background: #f7f2e8;
+        color: #3a2f28;
     }
 
+    /* HERO BEACH SECTION */
     .hero {
-        background: #f7f0e9;
+        background: linear-gradient(to bottom, #dff7f2, #f7f2e8);
         text-align: center;
-        padding: 100px 20px;
+        padding: 120px 20px;
+        background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.4);
     }
 
     .hero h1 {
-        font-size: 50px;
+        font-size: 48px;
         margin: 0;
         font-weight: bold;
     }
 
     .hero h2 {
-        font-size: 36px;
-        margin: 10px 0;
-        font-weight: bold;
-    }
-
-    .hero p {
-        max-width: 600px;
-        margin: 20px auto;
-        line-height: 1.6;
-        font-size: 18px;
+        font-size: 28px;
+        margin: 10px 0 25px;
     }
 
     .button {
-        background: #7d6b5a;
+        background: #7b5e4a;
         color: white;
-        padding: 12px 28px;
-        border-radius: 4px;
+        padding: 12px 30px;
+        border-radius: 6px;
         text-decoration: none;
-        font-size: 16px;
-        display: inline-block;
-        margin-top: 20px;
+        font-size: 18px;
     }
 
-    /* Two-column section */
+    /* ROTATING PHOTOS */
+    .slideshow {
+        max-width: 700px;
+        margin: 60px auto;
+        position: relative;
+    }
+    .slideshow img {
+        width: 100%;
+        border-radius: 12px;
+        opacity: 0;
+        position: absolute;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .slideshow img.active {
+        opacity: 1;
+    }
+
+    /* SECTION STYLING */
     .section {
-        display: flex;
-        flex-wrap: wrap;
         padding: 80px 20px;
-        background: #f4d7cf;
+        text-align: center;
+        background: #ffffff;
     }
 
-    .text-block {
-        flex: 1;
-        padding: 20px;
-        min-width: 300px;
-        max-width: 600px;
-    }
-
-    .text-block h3 {
+    .section h3 {
         font-size: 32px;
         margin-bottom: 10px;
-        font-weight: bold;
+        color: #7b5e4a;
     }
 
-    .text-block h4 {
-        margin-top: 0;
-        font-size: 20px;
-        font-weight: normal;
+    /* BEST MAN + BRIDESMAID */
+    .people {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 40px;
     }
 
-    .text-block p {
-        line-height: 1.7;
-        font-size: 17px;
-        max-width: 500px;
-    }
-
-    .photo-block {
-        flex: 1;
+    .person {
+        width: 220px;
         padding: 20px;
-        text-align: center;
-        min-width: 300px;
+        background: #f7f2e8;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    .photo-block img {
-        width: 90%;
-        max-width: 350px;
+    .person img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .person h4 {
+        margin-top: 15px;
+    }
+
+    /* RSVP FORM */
+    .form-section {
+        padding: 80px 20px;
+        background: #dff7f2;
+    }
+
+    form {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    input, select {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0 20px;
         border-radius: 6px;
-        object-fit: cover;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 18px;
+        background: #64b5f6;
+        color: white;
+        border: none;
+        border-radius: 6px;
+    }
+
+    .confirmation {
+        margin-top: 20px;
+        color: green;
+        text-align: center;
+        font-weight: bold;
     }
 </style>
 </head>
@@ -102,35 +148,108 @@
 
 <!-- HERO SECTION -->
 <section class="hero">
-    <h1>27.06.2026</h1>
-    <h2>Our Special Day</h2>
-    <p>
-        Join us for our wedding celebration as we unite in love! Mark your calendars
-        for a day filled with joy, laughter, and cherished memories. We can’t wait to
-        celebrate this beautiful moment with you!
-    </p>
-    <a class="button" href="#">Register Now</a>
+    <h1>Sozopol • 27.06</h1>
+    <h2>Beach Bar Santa Marina</h2>
+    <a class="button" href="#rsvp">RSVP Now</a>
 </section>
 
-<!-- LOVE STORY SECTION -->
+<!-- LOVE STORY WITH ROTATION -->
 <section class="section">
-    <div class="text-block">
-        <h3>Our Love Story</h3>
-        <h4>Meet the Couple</h4>
-        <p>
-            Join us on our journey as we embark on a lifetime of love and
-            happiness. From our first date to this moment, our hearts have
-            intertwined to create a beautiful story filled with laughter, joy,
-            and endless love. We are excited to share our special day with
-            you and create unforgettable memories together. Let’s celebrate
-            love, laughter, and happily ever after.
-        </p>
-    </div>
+    <h3>Our Love Story</h3>
+    <p>We can't wait to share this beautiful moment with you on the beach.</p>
 
-    <div class="photo-block">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Couple Photo">
+    <div class="slideshow">
+        <!-- Replace these with your real photos -->
+        <img src="https://via.placeholder.com/800x500?text=Photo+1" class="active">
+        <img src="https://via.placeholder.com/800x500?text=Photo+2">
+        <img src="https://via.placeholder.com/800x500?text=Photo+3">
     </div>
 </section>
+
+<!-- WEDDING PARTY -->
+<section class="section">
+    <h3>Wedding Party</h3>
+
+    <div class="people">
+        <div class="person">
+            <img src="https://via.placeholder.com/300x300?text=Best+Man">
+            <h4>Best Man</h4>
+        </div>
+
+        <div class="person">
+            <img src="https://via.placeholder.com/300x300?text=Bridesmaid">
+            <h4>Bridesmaid</h4>
+        </div>
+    </div>
+</section>
+
+<!-- RSVP FORM -->
+<section class="form-section" id="rsvp">
+    <h3 style="text-align:center;">RSVP</h3>
+
+    <form id="rsvpForm">
+        <label>Name</label>
+        <input type="text" id="name" required>
+
+        <label>Bringing +1?</label>
+        <select id="plusOne">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+
+        <label>Children attending</label>
+        <select id="children">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3+">3+</option>
+        </select>
+
+        <label>Menu Choice</label>
+        <select id="menu">
+            <option value="Menu 1">Menu 1</option>
+            <option value="Menu 2">Menu 2</option>
+        </select>
+
+        <button type="submit">Confirm Attendance</button>
+
+        <div class="confirmation" id="confirmationMessage" style="display:none;">
+            Thank you! Your response is saved.
+        </div>
+    </form>
+</section>
+
+<script>
+/* Photo Rotation */
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slideshow img');
+
+setInterval(() => {
+    slides[slideIndex].classList.remove('active');
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add('active');
+}, 3000);
+
+/* RSVP Save Locally */
+document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const entry = {
+        name: document.getElementById('name').value,
+        plusOne: document.getElementById('plusOne').value,
+        children: document.getElementById('children').value,
+        menu: document.getElementById('menu').value
+    };
+
+    let saved = JSON.parse(localStorage.getItem('rsvpData') || "[]");
+    saved.push(entry);
+
+    localStorage.setItem('rsvpData', JSON.stringify(saved));
+
+    document.getElementById('confirmationMessage').style.display = 'block';
+    this.reset();
+});
+</script>
 
 </body>
 </html>
