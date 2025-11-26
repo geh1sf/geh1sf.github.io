@@ -1,11 +1,7 @@
-/* ============================================================
-   ROOT PATH
-============================================================ */
+/* ROOT PATH */
 const ROOT = "/hristo-and-sara-wedding";
 
-/* ============================================================
-   LOAD IMAGES (HERO, SLIDESHOW, PARTY, GALLERY)
-============================================================ */
+/* LOAD IMAGES */
 async function loadImages() {
     const res = await fetch(`${ROOT}/assets/data/images.json`);
     const data = await res.json();
@@ -58,9 +54,7 @@ async function loadImages() {
 }
 loadImages();
 
-/* ============================================================
-   SLIDESHOW ROTATION
-============================================================ */
+/* SLIDESHOW ROTATION */
 setInterval(() => {
     const slides = document.querySelectorAll("#slideshow img");
     if (slides.length < 2) return;
@@ -72,9 +66,7 @@ setInterval(() => {
     next.classList.add("active");
 }, 3500);
 
-/* ============================================================
-   COUNTDOWN
-============================================================ */
+/* COUNTDOWN */
 function startCountdown() {
     const target = new Date("June 27, 2026 17:00:00 GMT+0300").getTime();
 
@@ -100,9 +92,7 @@ function startCountdown() {
 }
 startCountdown();
 
-/* ============================================================
-   MUSIC AUTOPLAY FIX
-============================================================ */
+/* MUSIC AUTOPLAY */
 document.addEventListener("DOMContentLoaded", () => {
     const music = document.getElementById("bgMusic");
     if (!music) return;
@@ -120,9 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("touchstart", startMusic);
 });
 
-/* ============================================================
-   TOOLTIP HANDLING
-============================================================ */
+/* TOOLTIP */
 function attachTooltip(select) {
     const wrapper = select.parentElement;
     const tooltip = wrapper.querySelector(".tooltip");
@@ -139,9 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     attachTooltip(document.getElementById("plusOneMenu"));
 });
 
-/* ============================================================
-   +1 LOGIC (FIXED)
-============================================================ */
+/* +1 LOGIC */
 document.addEventListener("DOMContentLoaded", () => {
     const plusOneSelect = document.getElementById("plusOneSelect");
     const plusOneName = document.getElementById("plusOneName");
@@ -149,14 +135,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const plusOneMenu = document.getElementById("plusOneMenu");
 
     plusOneSelect.addEventListener("change", () => {
-        const bringingPlusOne = plusOneSelect.value === "Yes";
-
-        plusOneName.style.display = bringingPlusOne ? "block" : "none";
-        plusOneMenuWrapper.style.display = bringingPlusOne ? "block" : "none";
-
-        if (bringingPlusOne) {
+        if (plusOneSelect.value === "Yes") {
+            plusOneName.style.display = "block";
+            plusOneMenuWrapper.style.display = "block";
             plusOneMenu.required = true;
         } else {
+            plusOneName.style.display = "none";
+            plusOneMenuWrapper.style.display = "none";
             plusOneMenu.required = false;
             plusOneName.value = "";
             plusOneMenu.value = "";
@@ -164,27 +149,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-/* ============================================================
-   FORM SUBMIT CONFIRMATION (IMPROVED)
-============================================================ */
+/* FORM SUBMIT CONFIRMATION */
 document.getElementById("rsvpForm").addEventListener("submit", function () {
-    const confirmation = document.getElementById("confirmation");
-
-    // Delay to allow Google Forms POST to finish
+    document.getElementById("confirmation").style.display = "block";
     setTimeout(() => {
-        confirmation.style.display = "block";
-
-        // Reset UI state
-        document.getElementById("plusOneName").style.display = "none";
-        document.getElementById("plusOneMenuWrapper").style.display = "none";
-
         this.reset();
-    }, 900);
+    }, 500);
 });
 
-/* ============================================================
-   TRANSLATIONS
-============================================================ */
+/* TRANSLATIONS */
 async function loadTranslations(lang) {
     const res = await fetch(`${ROOT}/assets/data/lang.json`);
     const translations = await res.json();
@@ -208,9 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTranslations("en");
 });
 
-/* ============================================================
-   GSAP ANIMATIONS
-============================================================ */
+/* GSAP ANIMATIONS */
 document.addEventListener("DOMContentLoaded", () => {
     gsap.from(".hero-content", {
         opacity: 0,
@@ -229,3 +200,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+/* ============================================================
+   PETAL GENERATOR (FULL PAGE)
+============================================================ */
+
+function createPetal() {
+    const container = document.getElementById("petal-container");
+    if (!container) return;
+
+    const petal = document.createElement("div");
+    petal.classList.add("petal");
+
+    petal.style.left = Math.random() * 100 + "vw";
+
+    const size = 18 + Math.random() * 25;
+    petal.style.width = size + "px";
+    petal.style.height = size + "px";
+
+    const duration = 4 + Math.random() * 5;
+    petal.style.animationDuration = duration + "s";
+
+    container.appendChild(petal);
+
+    setTimeout(() => petal.remove(), duration * 1000);
+}
+
+setInterval(createPetal, 350);
