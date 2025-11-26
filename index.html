@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<!-- 🌹 PETAL BORDERS -->
+<!-- PETALS -->
 <div id="petal-left"></div>
 <div id="petal-right"></div>
 <div id="petal-top"></div>
@@ -31,40 +31,70 @@
     <source src="/hristo-and-sara-wedding/assets/music/song.mp3" type="audio/mpeg">
 </audio>
 
-<!-- COUNTDOWN -->
-<section id="countdown" class="countdown-elegant">
-    <div class="countdown-frame">
-        <div class="time-block">
-            <div class="flower-number"><span id="days">0</span></div>
-            <p data-i18n="days">Days</p>
+<!-- ⭐ NEW SPLIT COUNTDOWN SECTION ⭐ -->
+<section id="wedding-intro">
+
+    <!-- LEFT PANEL -->
+    <div class="wi-left">
+
+        <h2 class="wi-title">WE'RE GETTING<br>MARRIED</h2>
+
+        <div class="wi-names">
+
+            <div class="wi-name-block">
+                <div class="wi-crown">👑</div>
+                <span class="wi-name">Sara</span>
+            </div>
+
+            <div class="wi-divider"></div>
+
+            <div class="wi-name-block">
+                <div class="wi-crown">👑</div>
+                <span class="wi-name">Hristo</span>
+            </div>
+
         </div>
-        <div class="time-block">
-            <div class="flower-number"><span id="hours">0</span></div>
-            <p data-i18n="hours">Hours</p>
+
+        <div id="wi-timer">
+            <div class="wi-unit">
+                <span id="days" class="wi-number">00</span>
+                <span class="wi-label">DAYS</span>
+            </div>
+
+            <span class="wi-dot">:</span>
+
+            <div class="wi-unit">
+                <span id="hours" class="wi-number">00</span>
+                <span class="wi-label">HOURS</span>
+            </div>
+
+            <span class="wi-dot">:</span>
+
+            <div class="wi-unit">
+                <span id="minutes" class="wi-number">00</span>
+                <span class="wi-label">MINUTES</span>
+            </div>
+
+            <span class="wi-dot">:</span>
+
+            <div class="wi-unit">
+                <span id="seconds" class="wi-number">00</span>
+                <span class="wi-label">SECONDS</span>
+            </div>
         </div>
-        <div class="time-block">
-            <div class="flower-number"><span id="minutes">0</span></div>
-            <p data-i18n="minutes">Minutes</p>
-        </div>
-        <div class="time-block">
-            <div class="flower-number"><span id="seconds">0</span></div>
-            <p data-i18n="seconds">Seconds</p>
-        </div>
+
     </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="wi-right">
+        <div class="wi-photo"></div>
+    </div>
+
 </section>
+<!-- END NEW SECTION -->
 
 
-<!-- HERO -->
-<header class="hero animate-fade">
-    <div class="hero-content">
-        <h1 data-i18n="hero_title">Bound by Love, Blessed by the Sea</h1>
-        <h2>Hristo & Sara</h2>
-        <h3 data-i18n="hero_sub">Sozopol • 27 June 2026 • Beach Bar Santa Marina</h3>
-        <a href="#rsvp" class="btn-light" data-i18n="rsvp_btn">RSVP</a>
-    </div>
-</header>
-
-<!-- LOVE STORY SLIDESHOW -->
+<!-- LOVE STORY -->
 <section class="section animate-up">
     <h2 class="section-title" data-i18n="love_story">Our Love Story</h2>
     <div id="slideshow" class="slideshow"></div>
@@ -76,13 +106,13 @@
     <div id="weddingparty" class="party-grid"></div>
 </section>
 
-<!-- 🌟 3D GALLERY -->
+<!-- 3D GALLERY -->
 <section class="section animate-up">
     <h2 class="section-title" data-i18n="gallery">Gallery</h2>
     <div id="carousel3D" class="carousel-3d"></div>
 </section>
 
-<!-- RSVP FORM -->
+<!-- RSVP -->
 <section class="section rsvp-section animate-up" id="rsvp">
     <h2 class="section-title" data-i18n="rsvp">RSVP</h2>
 
@@ -105,8 +135,8 @@
         <div class="menu-wrapper">
             <select name="entry.1401677313" id="menuMain" required>
                 <option value="">Select Menu</option>
-                <option value="Menu 1" data-tooltip="Seafood main course, fresh salad, dessert, white wine.">Menu 1</option>
-                <option value="Menu 2" data-tooltip="Beef main course, potatoes, dessert, red wine.">Menu 2</option>
+                <option value="Menu 1">Menu 1</option>
+                <option value="Menu 2">Menu 2</option>
             </select>
             <span class="tooltip"></span>
         </div>
@@ -121,8 +151,8 @@
         <div class="menu-wrapper" id="plusOneMenuWrapper" style="display:none;">
             <select id="plusOneMenu" name="entry.1204705007">
                 <option value="">Menu for +1</option>
-                <option value="Menu 1" data-tooltip="Seafood meal, salad, dessert, white wine.">Menu 1</option>
-                <option value="Menu 2" data-tooltip="Beef main dish, potatoes, dessert, red wine.">Menu 2</option>
+                <option value="Menu 1">Menu 1</option>
+                <option value="Menu 2">Menu 2</option>
             </select>
             <span class="tooltip"></span>
         </div>

@@ -284,3 +284,117 @@ body {
         font-size: 30px;
     }
 }
+/* ============================================================
+   WE'RE GETTING MARRIED — SPLIT HERO + COUNTDOWN
+============================================================ */
+
+#wedding-intro {
+    display: flex;
+    min-height: 80vh;
+    width: 100%;
+    background: #ffffff;
+}
+
+/* LEFT SIDE */
+.wi-left {
+    width: 50%;
+    padding: 60px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wi-title {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+/* Names */
+.wi-names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.wi-name-block {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.wi-crown {
+    font-size: 22px;
+}
+
+.wi-name {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.wi-divider {
+    width: 1px;
+    height: 40px;
+    background: #222;
+    margin: 12px 0;
+}
+
+/* Timer */
+#wi-timer {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.wi-unit {
+    text-align: center;
+}
+
+.wi-number {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.wi-label {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.wi-dot {
+    font-size: 40px;
+    margin-top: -8px;
+}
+
+/* RIGHT SIDE IMAGE */
+.wi-right {
+    width: 50%;
+}
+
+.wi-photo {
+    width: 100%;
+    height: 100%;
+    background-image: var(--hero-desktop);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    #wedding-intro {
+        flex-direction: column;
+    }
+
+    .wi-left, .wi-right {
+        width: 100%;
+    }
+
+    .wi-photo {
+        height: 300px;
+    }
+}
